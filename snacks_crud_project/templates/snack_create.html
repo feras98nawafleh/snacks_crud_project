@@ -1,0 +1,21 @@
+
+{% extends "_base.html" %}
+{% block title %}Snack Creation{% endblock %}
+
+{% block content %}
+
+<h1>Create Snack</h1>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="save">
+</form>
+
+  <br>
+  <br>
+  <button>
+      <a href='/'>Cancel</a>
+  </button>
+
+{% endblock content %}

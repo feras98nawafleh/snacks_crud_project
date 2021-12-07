@@ -1,0 +1,32 @@
+{% extends "_base.html" %}
+
+
+{% block content %}
+<button>
+   <a href="create">Add new Snack</a>
+</button>
+<ul>
+  {% if object_list %}
+    {% for snack in object_list %}
+         <li>
+            <h1>
+               <a href ="{{snack.get_absolute_url}}">{{snack.title}}</a>
+            </h1>
+         </li>
+         <h2>Purchased by: {{snack.purchaser}}</h2>
+         <h4>
+            Out of &#9734;&#9734;&#9734;&#9734;&#9734; Rating: 
+            {{snack.rate}}            
+         </h4>
+   {% endfor %}
+  {% else %}
+    <h2>
+       Sorry, no snacks in this list, add one? 
+       <button>
+         <a href="create">Add new Snack</a>
+      </button>
+</h2>
+  {% endif %}
+</ul>
+{% endblock %}
+
