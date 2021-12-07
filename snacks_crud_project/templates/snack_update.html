@@ -1,0 +1,14 @@
+{% extends "_base.html" %}
+{% block title %}Snacks List{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type ="submit" value="Update"/>
+    </form>
+    <br/>
+    <button>
+        <a href ='{{snack.get_absolute_url}}'>Cancel</a>
+    </button>
+{% endblock %}
